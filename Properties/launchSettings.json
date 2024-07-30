@@ -12,6 +12,7 @@
     "LibraryAPI6": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "swagger",
       "applicationUrl": "http://localhost:16617",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
