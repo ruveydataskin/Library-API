@@ -56,7 +56,7 @@ namespace LibraryAPI6.Controllers
             // Check if Admin set is null
             if (_context.Admin == null)
             {
-                return Unauthorized("Failed Login");
+                return Unauthorized();
             }
 
             // Find admin by id

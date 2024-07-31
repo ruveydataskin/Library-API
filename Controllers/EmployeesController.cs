@@ -62,7 +62,7 @@ namespace LibraryAPI6.Controllers
             // Ensure the current user is authorized to access this resource
             if (applicationUser == null || applicationUser.Id != id)
             {
-                return Unauthorized("Failed Login");
+                return Unauthorized();
             }
 
             if (_context.Employees == null)
@@ -85,6 +85,19 @@ namespace LibraryAPI6.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmployee(string id, Employee employee, string? currentPassword = null)
         {
+            
+            if (User.IsInRole("Admin") == false)
+            {
+                string username = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                ApplicationUser applicationUser1 = _userManager.FindByNameAsync(username).Result;
+
+                // Ensure the current user is authorized to access this resource
+                if (applicationUser1 == null || applicationUser1.Id != id)
+                {
+                    return Unauthorized();
+                }
+            }
+
             if (id != employee.Id)
             {
                 return BadRequest(); // Return 400 if the ID in the URL does not match the ID in the body
