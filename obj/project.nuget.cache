@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wJS0MyGtaG4cWo284E1siwy80BBHNHBF2GN+GgYsklVtSr5tcaKSvkx08aZ/eTx39LONGn74ACx4dYg1nBtjQA==",
+  "dgSpecHash": "8VyvPO+yv7tpTBd1wvfROtnJI2Zry94oGyykRcIUbRMQpX6fd3FRvzYPW1yki7JhWgMravJ1EeUcyHFfwpionA==",
   "success": true,
   "projectFilePath": "/Users/ruveydataskin/Desktop/LibraryAPI/LibraryAPI6/LibraryAPI6.csproj",
   "expectedPackageFiles": [
@@ -235,9 +235,9 @@
     "/Users/ruveydataskin/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
     "/Users/ruveydataskin/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/Users/ruveydataskin/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
-    "/Users/ruveydataskin/.nuget/packages/microsoft.netcore.app.ref/6.0.28/microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
-    "/Users/ruveydataskin/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.28/microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
-    "/Users/ruveydataskin/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.28/microsoft.netcore.app.host.osx-arm64.6.0.28.nupkg.sha512"
+    "/Users/ruveydataskin/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.24/microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512",
+    "/Users/ruveydataskin/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.24/microsoft.netcore.app.host.osx-arm64.6.0.24.nupkg.sha512",
+    "/Users/ruveydataskin/.nuget/packages/microsoft.netcore.app.ref/6.0.24/microsoft.netcore.app.ref.6.0.24.nupkg.sha512"
   ],
   "logs": []
 }

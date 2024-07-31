@@ -74,7 +74,7 @@ namespace LibraryAPI6.Controllers
             }
 
             // Find the associated book copy
-            var bookcopy = await _context.BookCopies.FindAsync(loan.BookCopyId);
+            var bookcopy = await _context.BookCopies!.FindAsync(loan.BookCopyId);
             if (bookcopy == null)
             {
                 return NotFound();

@@ -41,7 +41,7 @@ namespace LibraryAPI6.Controllers
                 return NotFound();
             }
             // Retrieve and return all admins
-            return await _context.Admin.ToListAsync();
+            return await _context.Admin.Include(m => m.ApplicationUser).ToListAsync();
         }
 
         // GET: api/Admins/5

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using LibraryAPI6.Services;
+using System.Diagnostics.Metrics;
 
 namespace LibraryAPI6.Controllers
 {
@@ -56,9 +57,10 @@ namespace LibraryAPI6.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> GetEmployee(string id)
         {
+            string username = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ApplicationUser applicationUser = _userManager.FindByNameAsync(username).Result;
             // Ensure the current user is authorized to access this resource
-            var currentUser = await _userManager.GetUserAsync(User);
-            if (currentUser == null || currentUser.Id != id)
+            if (applicationUser == null || applicationUser.Id != id)
             {
                 return Unauthorized("Failed Login");
             }
@@ -160,7 +162,7 @@ namespace LibraryAPI6.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error creating user");
             }
-
+            _userManager.AddToRoleAsync(employee.ApplicationUser, "Worker").Wait();
             employee.Id = employee.ApplicationUser!.Id;
             employee.ApplicationUser = null;
             _context.Employees.Add(employee);

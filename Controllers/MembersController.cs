@@ -9,6 +9,7 @@ using LibraryAPI6.Data;
 using LibraryAPI6.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace LibraryAPI6.Controllers
 {
@@ -46,25 +47,21 @@ namespace LibraryAPI6.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Member>> GetMember(string id)
         {
-            // Retrieve the currently logged-in user
-            ApplicationUser applicationUser = await _userManager.GetUserAsync(User);
-
-            // Check if the logged-in user is authorized to view this member
-            if (applicationUser.Id != id)
+            string username = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ApplicationUser applicationUser = _userManager.FindByNameAsync(username).Result;
+            // Ensure the current user is authorized to access this resource
+            if (applicationUser == null || applicationUser.Id != id)
             {
                 return Unauthorized("Failed Login");
             }
 
-            // Check if the Members DbSet is null
             if (_context.Members == null)
             {
                 return NotFound();
             }
 
-            // Find the member by ID
             var member = await _context.Members.FindAsync(id);
 
-            // Return 404 if member not found
             if (member == null)
             {
                 return NotFound();
@@ -152,6 +149,7 @@ namespace LibraryAPI6.Controllers
             }
             // Create the ApplicationUser asynchronously
             _userManager.CreateAsync(member.ApplicationUser!, member.ApplicationUser!.Password).Wait();
+            _userManager.AddToRoleAsync(member.ApplicationUser, "Member").Wait();
             member.Id = member.ApplicationUser!.Id;
             member.ApplicationUser = null;
             _context.Members.Add(member);
