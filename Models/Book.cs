@@ -59,6 +59,7 @@ namespace LibraryAPI6.Models
 
         public List<Rating>? Ratings { get; set; }
 
+        public byte Status { get; set; } = 1;
     }
 }
 

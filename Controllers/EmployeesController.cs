@@ -204,18 +204,15 @@ namespace LibraryAPI6.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(string id)
         {
-            if (_context.Employees == null)
-            {
-                return NotFound(); // Return 404 if the Employees set is null
-            }
 
-            var employee = await _context.Employees.FindAsync(id);
+            var employee = await _userManager.FindByIdAsync(id);
+
             if (employee == null)
             {
                 return NotFound(); // Return 404 if the employee is not found
             }
 
-            _context.Employees.Remove(employee);
+            employee.Status = 0;
             await _context.SaveChangesAsync();
 
             return NoContent(); // Return 204 No Content if the deletion is successful

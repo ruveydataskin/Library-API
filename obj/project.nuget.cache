@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8VyvPO+yv7tpTBd1wvfROtnJI2Zry94oGyykRcIUbRMQpX6fd3FRvzYPW1yki7JhWgMravJ1EeUcyHFfwpionA==",
+  "dgSpecHash": "fQsl4AtIvl7OyP8HSZKmYeTI35rQivGzo3PAin5uKj4ts5am5Eb1c6nMfS3C6S4M9g1f3JfdNj9NYDiege0eHw==",
   "success": true,
-  "projectFilePath": "/Users/ruveydataskin/Desktop/LibraryAPI/LibraryAPI6/LibraryAPI6.csproj",
+  "projectFilePath": "/Users/ruveydataskin/Desktop/code/LibraryAPI/LibraryAPI6/LibraryAPI6.csproj",
   "expectedPackageFiles": [
     "/Users/ruveydataskin/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/Users/ruveydataskin/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
@@ -235,9 +235,9 @@
     "/Users/ruveydataskin/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
     "/Users/ruveydataskin/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/Users/ruveydataskin/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
-    "/Users/ruveydataskin/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.24/microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512",
-    "/Users/ruveydataskin/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.24/microsoft.netcore.app.host.osx-arm64.6.0.24.nupkg.sha512",
-    "/Users/ruveydataskin/.nuget/packages/microsoft.netcore.app.ref/6.0.24/microsoft.netcore.app.ref.6.0.24.nupkg.sha512"
+    "/Users/ruveydataskin/.nuget/packages/microsoft.netcore.app.ref/6.0.28/microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "/Users/ruveydataskin/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.28/microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
+    "/Users/ruveydataskin/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.28/microsoft.netcore.app.host.osx-arm64.6.0.28.nupkg.sha512"
   ],
   "logs": []
 }

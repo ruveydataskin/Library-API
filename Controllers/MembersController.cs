@@ -194,20 +194,15 @@ namespace LibraryAPI6.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMember(string id)
         {
-            // Check if the Members DbSet is null
-            if (_context.Members == null)
-            {
-                return NotFound();
-            }
             // Find the member by ID
-            var member = await _context.Members.FindAsync(id);
+            var member = await _userManager.FindByIdAsync(id);
             if (member == null)
             {
                 return NotFound();
             }
 
+            member.Status = 0;
             // Remove the member and save changes
-            _context.Members.Remove(member);
             await _context.SaveChangesAsync();
 
             return NoContent();

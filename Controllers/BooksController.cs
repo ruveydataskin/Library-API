@@ -114,17 +114,13 @@ namespace LibraryAPI6.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBook(int id)
         {
-            if (_context.Books == null)
-            {
-                return NotFound(); // Return 404 if the Books set is null
-            }
-            var book = await _context.Books.FindAsync(id);
+            var book = await _context.Books!.FindAsync(id);
             if (book == null)
             {
                 return NotFound(); // Return 404 if the Book is not found
             }
 
-            _context.Books.Remove(book); // Remove the Book from the database
+            book.Status = 0;
             await _context.SaveChangesAsync(); // Save changes to the database
 
             return NoContent(); // Return 204 No Content if the deletion is successful
